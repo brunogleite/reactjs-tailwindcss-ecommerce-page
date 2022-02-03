@@ -7,7 +7,7 @@ import { countContext } from "./components/Context/countContext"
 
 function App() {
   return (
-    <countContext.Provider value={} className="container mx-auto">
+    <countContext.Provider className="container mx-auto">
         <Nav />
         <Content />
     </countContext.Provider>
