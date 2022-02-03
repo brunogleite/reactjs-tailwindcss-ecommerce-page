@@ -5,7 +5,7 @@ import Info from "../components/Info/Info";
 
 function Content() {
   return (
-    <div className="container flex flex-col md:flex-row h-screen items-center justify-center border-2 border-green-500">
+    <div className="flex flex-col  md:flex-row h-screen items-center justify-center border-2 border-green-500">
         <Slider />
         <Info />
     </div>

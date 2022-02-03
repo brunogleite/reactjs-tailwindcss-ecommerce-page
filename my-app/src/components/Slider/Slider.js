@@ -10,12 +10,12 @@ function Slider(){
         setProduct(id)
     }
 
-    /*function changeLightBoxProduct(id){
+    function changeLightBoxProduct(id){
         setLightBox(id)
-    }*/
+    }
 
     return(
-        <div className="w-full p-0  md:w-6/12 md:p-12 border-2 border-rose-500">
+        <div className="w-full p-0 md:w-6/12 p-12 border-2 border-rose-500">
            <div className="">
                {imgMock.map((data, id) => {
                    return(
@@ -24,7 +24,7 @@ function Slider(){
                    src={data.imgSrc}
                    alt={"Product Image " + data.id}
                    draggable = "false"
-                   className={product === id ? "block aspect-square md:mb-7 md:rounded-2xl" : "hidden"}
+                   className={product === id ? "block rounded-2xl mb-7 aspect-square" : "hidden"}
                    onClick={() => setLightBox(!lightbox)}
                    />
                    )  

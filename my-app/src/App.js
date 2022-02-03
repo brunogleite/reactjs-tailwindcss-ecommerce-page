@@ -1,4 +1,3 @@
-import React from "react";
 import "./index.css";
 
 import Nav from "./components/Nav";
@@ -7,16 +6,8 @@ import { countContext } from "./components/Context/countContext"
 
 
 function App() {
-
-  const [count, setCount] = React.useState(0)
-
-  const counter = {
-    count,
-    setCount
-  }
-
   return (
-    <countContext.Provider value={ counter }>
+    <countContext.Provider value={} className="container mx-auto">
         <Nav />
         <Content />
     </countContext.Provider>

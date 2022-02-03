@@ -9,16 +9,7 @@ module.exports = {
       ,
       fontFamily: {
         "display" : "Kumbh Sans"
-      },
-
-      container:{
-        center: true,
-      },
-
-      backgroundImage : {
-        "profile-pic" : "url('./assets/profile-pic.png')"
       }
-
     },
   },
   plugins: [],
