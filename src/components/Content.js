@@ -5,9 +5,9 @@ import Info from "../components/Info/Info";
 
 function Content() {
   return (
-    <div className="flex flex-col  md:flex-row h-screen items-center justify-center border-2 border-green-500">
-        <Slider />
-        <Info />
+    <div className=" w-full mx-auto h-screen border-2 border-rose-500 container md:flex md:flex-row md:items-center md:justify-center">
+      <Slider /> 
+      <Info />
     </div>
   );
 }

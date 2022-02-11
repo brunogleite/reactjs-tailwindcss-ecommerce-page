@@ -1,5 +1,6 @@
 import React from "react";
 
-const countContext = React.createContext(null)
+
+const countContext = React.createContext()
 
 export { countContext }
