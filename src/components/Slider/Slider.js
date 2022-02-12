@@ -1,15 +1,52 @@
 import { imgMock } from "./Mock";
-import Modal from "../Modal"
+import Modal from "../Modal";
 
-import ButtonControll from "../ButtonControl";
+import NextIcon from "../../assets/nextIcon.png";
+import PrevIcon from "../../assets/prevIcon.png";
+
+import ButtonControl from "../ButtonControl";
 
 
 import React, { useCallback } from "react";
 
+//I should get id of each image without rendering evry single icons
+//how do I get that?
+
+//fazer uma funcao em que consiga obter cada id do meu objeto like api 
+
+
+
+
+
 function Slider() {
+
     const [product, setProduct] = React.useState(0);
     const [lightbox, setLightBox] = React.useState(false);
-    const [imageNumber, setImageNumber] = React.useState(1);
+    const length = imgMock.length;
+
+    {/*function receiveEachId(){
+        {imgMock.map(( {id} ) => {
+
+            if(product === id ){
+                setProduct((prevState) => prevState + 1);
+            }
+
+            ver opcao em que o id é menor do que 1 nao faz nada e maior do que 4
+            se queres aumentar adiciona  + 1 à id e mudas alguma variavel (provavelmente o product)
+            
+        })}
+    }*/}
+
+    function nextSlide() {
+        //precisamos de certificar que 
+        setProduct(product === length - 1 ? 0 : product + 1)
+    }
+
+    function prevSlide() {
+        //precisamos de certificar que 
+        setProduct(product === 0 ? length - 1 : product - 1)
+    }
+
 
     function changeProduct(id) {
         setProduct(id)
@@ -20,31 +57,44 @@ function Slider() {
     }
 
     //esta funcao vai verificar se o target.classname contem left or right e depois faz algo com isso 
-    const handleChangeImage = useCallback((className) => {
-        if (className.includes("leftButton")) {
-            setImageNumber((prevState) => (prevState > 1 ? prevState - 1 : 4))
-        }
-
-        if (className.includes("rightButton")) {
-            setImageNumber((prevState) => (prevState < 4 ? prevState + 1 : 1))
-        }
-    }, [])
+    /* const handleChangeImage = useCallback((className) => {
+         if (className.includes("leftButton")) {
+             setImageNumber((prevState) => (prevState > 1 ? prevState - 1 : 4))
+         }
+ 
+         if (className.includes("rightButton")) {
+             setImageNumber((prevState) => (prevState < 4 ? prevState + 1 : 1))
+         }
+     }, [])*/
 
     return (
-        <div className="w-screen md:w-6/12 border-2 border-rose-500 flex flex-col justify-center items-center">
+        <div className="w-screen relative md:w-6/12 border-2 border-rose-500 md:flex md:flex-col md:justify-center md:items-center">
             <div>
+                <ButtonControl>
+                    <img onClick={prevSlide} src={PrevIcon}  className="block md:hidden border-2 border-green-500 absolute top-1/2"/>
+                </ButtonControl>
                 {imgMock.map((data, id) => {
+
                     return (
-                        <img
-                            key={id}
-                            src={data.imgSrc}
-                            alt={"Product Image " + data.id}
-                            draggable="false"
-                            className={product === id ? "block md:rounded-2xl md:mb-7 md:max-w-[445px] md:max-h-[455px] w-full h-full" : "hidden"}
-                            onClick={() => setLightBox(!lightbox)}
-                        />
+                        <div className={id === product ? "block" : "hidden"} key={id}>
+                            {id === product && (<img
+                                key={id}
+                                src={data.imgSrc}
+                                alt={"Product Image " + data.id}
+                                draggable="false"
+                                className={product === id ? "block md:rounded-2xl md:mb-7 md:max-w-[445px] md:min-h-[455px] w-full h-full" : "hidden"}
+                                onClick={() => setLightBox(!lightbox)}
+                            />)}
+
+
+                        </div>
                     )
+
+
                 })}
+                <ButtonControl>
+                    <img onClick={nextSlide} src={NextIcon} className="block md:hidden border-2 border-rose-500 absolute right-0 top-1/2" />
+                </ButtonControl>
             </div>
             <div className="hidden md:flex justify-center">
                 {imgMock.map((data, index) => {
@@ -55,7 +105,7 @@ function Slider() {
                             alt={"Product image " + data.id}
                             key={data.id}
                             draggable="false"
-                            className={product === index ? " hidden rounded-lg opacity-40 md:max-w-[88px] md:max-h-[88px] w-full h-full  ml-7 md:block first:ml-0" : "hidden rounded-lg md:max-w-[88px] md:max-h-[88px] w-full h-full ml-7 first:ml-0 md:block "} />
+                            className={product === index ? " hidden rounded-lg opacity-40 md:max-w-[88px] md:min-h-[88px] w-full h-full ml-7 md:block first:ml-0" : "hidden rounded-lg md:max-w-[88px] md:min-h-[88px] w-full h-full ml-7 first:ml-0 md:block "} />
                     )
                 })}
             </div>
@@ -67,7 +117,7 @@ function Slider() {
                         </svg>
                     </div>
                     <div className="max-w-xl relative">
-                        <ButtonControll className="absolute bg-orange-500 p-6 left-0 top-1/2 cursor-pointer leftButton" handleClick={handleChangeImage}> heelo </ButtonControll>
+                        <ButtonControl className="absolute bg-orange-500 p-6 left-0 top-1/2 cursor-pointer" > heelo </ButtonControl>
                         {imgMock.map((data, id) => {
                             return (
                                 <img
@@ -79,7 +129,7 @@ function Slider() {
                                 />
                             )
                         })}
-                        <ButtonControll className="absolute bg-orange-500 p-6 right-0 top-1/2 cursor-pointer rightButton" handleClick={handleChangeImage}> goodbye </ButtonControll>
+                        <ButtonControl className="absolute bg-orange-500 p-6 right-0 top-1/2 cursor-pointer"> goodbye </ButtonControl>
                     </div>
                     <div className="hidden md:flex justify-center">
                         {imgMock.map((data, index) => {
@@ -90,7 +140,7 @@ function Slider() {
                                     alt={"Product image " + data.id}
                                     key={data.id}
                                     draggable="false"
-                                    className={product === index ? " hidden rounded-lg opacity-40 w-20 h-20 ml-7 aspect-square md:block first:ml-0" : "hidden rounded-lg w-20 h-20 ml-7 aspect-square first:ml-0 md:block "} />
+                                    className={product === index ? " hidden rounded-lg opacity-40 md:max-w-[88px] md:min-h-[88px] w-full h-full ml-7 md:block first:ml-0" : "hidden rounded-lg md:max-w-[88px] md:min-h-[88px] w-full h-full ml-7 first:ml-0 md:block "} />
                             )
                         })}
                     </div>

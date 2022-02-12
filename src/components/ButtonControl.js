@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React from "react";
 
-const ButtonControl = ({ handleClick, children, className }) => (
-  <div onClick={(e) => handleClick(e.target.className)} type="button" className={className}>
+const ButtonControl = ({ children }) => (
+  <div type="button">
     {children}
   </div>
 );
