@@ -16,18 +16,20 @@ function Counter() {
     }
 
     return (
-        <div className=" w-full md:flex md:content-center md:mr-4 md:bg-slate-50 md:rounded-lg">
-            <div className="flex content-center max-w-[157px]">
+        <div className=" w-full md:flex md:content-center md:mr-4">
+            <div className="flex content-center max-w-[157px] md:bg-slate-50 md:rounded-lg">
                 <button className="p-6 text-orange-500 hover:text-orange-300 font-bold text-xl" onClick={() => { if (productQuantity === 0) return; setProductQuantity(productQuantity - 1) }}>-</button>
                 <p className="py-6 ml-auto">{productQuantity}</p>
                 <button className="p-6 ml-auto text-orange-500 hover:text-orange-300 font-bold text-xl" onClick={() => { setProductQuantity(productQuantity + 1) }}>+</button>
             </div>
 
-            {productQuantity ? 
-            <div onClick={() => handleClickCheckout()} className="btn w-full md:max-w-[272px] select-none">
-                <p>Add to cart</p>
-            </div> 
-            : ""}
+            {productQuantity ?
+                <div onClick={() => handleClickCheckout()} className="btn w-full md:max-w-[272px] select-none">
+                    <p>Add to cart</p>
+                </div>
+                : <div disabled onClick={() => handleClickCheckout()} className="btn w-full md:max-w-[272px] select-none">
+                    <p>Add to cart</p>
+                </div>}
 
         </div>
     )

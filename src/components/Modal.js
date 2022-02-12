@@ -10,7 +10,7 @@ function Modal() {
     const [productQuantity, setProductQuantity] = useState(0);
 
     return (
-        <div className="w-96 bg-white shadow-xl absolute right-12 top-16 rounded-md">
+        <div className="w-80 bg-white right-6 top-[120px] shadow-xl z-10 absolute md:right-12 md:top-16 rounded-md">
             <div>
                 <h1 className="text-base py-5 pl-6">Cart</h1>
                 <hr></hr>
