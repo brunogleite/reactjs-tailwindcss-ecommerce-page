@@ -1,74 +1,26 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# Project made with React for a ecommerce page
+Ecommerce page made with ReactJS and TailwindCSS for styling. You can access this project by clicking [this link](https://heuristic-poincare-ca55e0.netlify.app/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Technologies
 
-## Available Scripts
+- ReactJS
+- TailwindCSS
 
-In the project directory, you can run:
+## The challenge
 
-### `npm start`
+- Users could mouse over the gallery and select for a highlight photo of it
+- User can choose the quantity and add all the items to cart
+- Users can delete items from cart
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Main takeaways about this project
 
-### `npm test`
+- [✔️] Applied Basic and some intermediate knowledge of React such as useState, useContext, useCallbacks
+- [✔️] Create a Context for passing the quantity value easily from parent component to the child components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Screenshots
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# reactjs-tailwindcss-ecommerce-page
->>>>>>> 933e6dc110e431aa99ea02c521368808f3e5274e
+![image 17](https://user-images.githubusercontent.com/5204282/153725650-e0000c0c-f9ad-4d1b-aef8-4f87cf9f9ba3.png)
+![image 18](https://user-images.githubusercontent.com/5204282/153725652-43fda221-c991-4d4f-b0d6-fc683a041a8e.png)
+![image 19](https://user-images.githubusercontent.com/5204282/153725654-61a0058e-e2e0-432a-ad73-c237ae565989.png)
